@@ -6,7 +6,7 @@ const fetchEmployee = async (req, res) => {
         res.status(200).json({ status: 200, data: fetchEmployeeRes })
     } catch (error) {
         console.log('==error==', error);
-        res.status(error.status).json({ error: error.message, data: {} })
+        res.status(error.status || 500).json({ error: error.message, data: {} })
     }
 }
 
@@ -16,7 +16,7 @@ const createEmployee = async (req, res) => {
         res.status(200).json({ status: 200, data: createEmployeeRes })
     } catch (error) {
         console.log('==error==', error);
-        res.status(error.status).json({ error: error.message, data: {} })
+        res.status(error.status || 500).json({ error: error.message, data: {} })
     }
 }
 

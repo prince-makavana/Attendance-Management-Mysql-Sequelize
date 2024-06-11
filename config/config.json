@@ -3,7 +3,7 @@
     "username": "root",
     "password": "root",
     "database": "timeManagement",
-    "host": "localhost",
+    "host": "mysqldb",
     "dialect": "mysql"
   },
   "test": {

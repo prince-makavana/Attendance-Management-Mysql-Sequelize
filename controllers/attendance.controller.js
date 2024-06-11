@@ -8,7 +8,7 @@ const fetchAttendance = async (req, res) => {
         const fetchAttendanceRes = await fetchAttendanceService(empId, weekCurrentOrPrev)
         res.status(200).json({ status: 200, data: fetchAttendanceRes })
     } catch (error) {
-        console.log('==error==', error);
+        console.error('error', error);
         res.status(error.status || 500).json({ error: error.message, data: {} })
     }
 }
@@ -18,7 +18,7 @@ const insertAttendance = async (req, res) => {
         const createAttendanceRes = await insertAttendanceService(req.body)
         res.status(200).json({ status: 200, data: createAttendanceRes })
     } catch (error) {
-        console.log('==error==', error);
+        console.error('error', error);
         res.status(error.status || 500).json({ error: error.message, data: {} })
     }
 }
